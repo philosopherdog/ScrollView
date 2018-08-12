@@ -13,7 +13,7 @@
         <!--Scroll View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScrollViewController" id="BYZ-38-t0r" customClass="ScrollViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
         <!--View Controller-->
         <scene sceneID="m8R-Vk-JrO">
             <objects>
-                <viewController id="Rn6-Ye-udF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageViewController" id="Rn6-Ye-udF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8dF-Bx-7jj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNd-eu-7RO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="731"/>
+            <point key="canvasLocation" x="642" y="841"/>
         </scene>
     </scenes>
 </document>

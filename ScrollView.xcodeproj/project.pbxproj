@@ -64,20 +64,60 @@
 		AA7DDFC12120B0FF00CC538B /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				AA7DDFC22120B0FF00CC538B /* AppDelegate.h */,
-				AA7DDFC32120B0FF00CC538B /* AppDelegate.m */,
+				AA7DDFE42120BC2000CC538B /* Images */,
+				AA7DDFE32120BC0C00CC538B /* Supplementary  Files */,
+				AA7DDFE22120BC0000CC538B /* Controller */,
+				AA7DDFE12120BBF700CC538B /* Model */,
+				AA7DDFDE2120BBCB00CC538B /* View */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		AA7DDFDE2120BBCB00CC538B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA7DDFC82120B0FF00CC538B /* Main.storyboard */,
+				AA7DDFCD2120B10100CC538B /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AA7DDFE12120BBF700CC538B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AA7DDFE22120BC0000CC538B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				AA7DDFC52120B0FF00CC538B /* ScrollViewController.h */,
 				AA7DDFC62120B0FF00CC538B /* ScrollViewController.m */,
-				AA7DDFC82120B0FF00CC538B /* Main.storyboard */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AA7DDFE32120BC0C00CC538B /* Supplementary  Files */ = {
+			isa = PBXGroup;
+			children = (
 				AA7DDFCB2120B10100CC538B /* Assets.xcassets */,
-				AA7DDFCD2120B10100CC538B /* LaunchScreen.storyboard */,
 				AA7DDFD02120B10100CC538B /* Info.plist */,
 				AA7DDFD12120B10100CC538B /* main.m */,
+				AA7DDFC22120B0FF00CC538B /* AppDelegate.h */,
+				AA7DDFC32120B0FF00CC538B /* AppDelegate.m */,
+			);
+			name = "Supplementary  Files";
+			sourceTree = "<group>";
+		};
+		AA7DDFE42120BC2000CC538B /* Images */ = {
+			isa = PBXGroup;
+			children = (
 				AA7DDFD82120B12900CC538B /* cats.jpg */,
 				AA7DDFDB2120BB2100CC538B /* chicago.jpg */,
 				AA7DDFDA2120BB2100CC538B /* montreal.jpg */,
 			);
-			path = ScrollView;
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
