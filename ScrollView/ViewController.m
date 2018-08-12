@@ -16,6 +16,15 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self setupScrollView];
+  [self setupScrollViewZoom];
+}
+
+- (void)setupScrollView {
+  
+}
+
+- (void)setupScrollViewZoom {
   
 }
 
