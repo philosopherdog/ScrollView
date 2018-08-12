@@ -13,6 +13,7 @@
 		AA7DDFCC2120B10100CC538B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7DDFCB2120B10100CC538B /* Assets.xcassets */; };
 		AA7DDFCF2120B10100CC538B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7DDFCD2120B10100CC538B /* LaunchScreen.storyboard */; };
 		AA7DDFD22120B10100CC538B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DDFD12120B10100CC538B /* main.m */; };
+		AA7DDFD92120B12900CC538B /* cats.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA7DDFD82120B12900CC538B /* cats.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AA7DDFCE2120B10100CC538B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA7DDFD02120B10100CC538B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA7DDFD12120B10100CC538B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA7DDFD82120B12900CC538B /* cats.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cats.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				AA7DDFCD2120B10100CC538B /* LaunchScreen.storyboard */,
 				AA7DDFD02120B10100CC538B /* Info.plist */,
 				AA7DDFD12120B10100CC538B /* main.m */,
+				AA7DDFD82120B12900CC538B /* cats.jpg */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			files = (
 				AA7DDFCF2120B10100CC538B /* LaunchScreen.storyboard in Resources */,
 				AA7DDFCC2120B10100CC538B /* Assets.xcassets in Resources */,
+				AA7DDFD92120B12900CC538B /* cats.jpg in Resources */,
 				AA7DDFCA2120B0FF00CC538B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
