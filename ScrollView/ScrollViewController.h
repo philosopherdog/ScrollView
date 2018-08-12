@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ScrollViewController.h
 //  ScrollView
 //
 //  Created by steve on 2018-08-12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ScrollViewController : UIViewController
 
 
 @end

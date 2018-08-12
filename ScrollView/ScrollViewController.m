@@ -6,13 +6,13 @@
 //  Copyright © 2018 steve. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ScrollViewController.h"
 
-@interface ViewController ()
+@interface ScrollViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ScrollViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
