@@ -7,13 +7,12 @@
   //
 
 #import "PageViewController.h"
+#import "ScrollViewController.h"
 
 @interface PageViewController ()<UIScrollViewDelegate>
 @property (nonatomic, weak) UIScrollView *scrollView;
-@property (nonatomic, weak) UIImageView *imageView1;
-@property (nonatomic, weak) UIImageView *imageView2;
-
-
+@property (nonatomic)NSArray<UIImageView*>*imageViews;
+@property (nonatomic, weak) UIPageControl *pageControl;
 @end
 
 @implementation PageViewController
@@ -22,6 +21,7 @@
   [super viewDidLoad];
   [self setupScrollView];
   [self setupLayout];
+  [self setupPageControl];
 }
 
 - (void)setupScrollView {
@@ -42,14 +42,39 @@
   imageView2.clipsToBounds = YES;
   [self.scrollView addSubview:imageView1];
   [self.scrollView addSubview:imageView2];
-  self.imageView1 = imageView1;
-  self.imageView2 = imageView2;
+  
+  self.imageViews = @[imageView1, imageView2];
+  
+  [self setupButtonOnImageView:imageView2];
+
+}
+
+- (void)setupButtonOnImageView:(UIImageView *)imageView {
+  imageView.userInteractionEnabled = YES;
+  UIButton *button = [[UIButton alloc]init];
+  [button setTitle:@"Done" forState:UIControlStateNormal];
+  button.backgroundColor = [UIColor orangeColor];
+  [button sizeToFit];
+//  button.layer.zPosition = 200;
+  [imageView addSubview:button];
+  button.center = self.view.center;
+  [button addTarget:self action:@selector(buttonTapped) forControlEvents:UIControlEventTouchUpInside];
+  button.userInteractionEnabled = YES;
+  button.enabled = YES;
+}
+
+- (void)buttonTapped {
+  // Create scrollViewController
+  ScrollViewController *scrollViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ScrollViewController"];
+  
+  // set it as the root controller on the window
+  self.view.window.rootViewController = scrollViewController;
 }
 
 - (void)setupLayout {
   self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-  self.imageView1.translatesAutoresizingMaskIntoConstraints = NO;
-  self.imageView2.translatesAutoresizingMaskIntoConstraints = NO;
+  self.imageViews[0].translatesAutoresizingMaskIntoConstraints = NO;
+  self.imageViews[1].translatesAutoresizingMaskIntoConstraints = NO;
   
     // scrollView to self.view
   [self.scrollView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
@@ -58,72 +83,65 @@
   [self.scrollView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
   
     // imageView1
-  
-  [self.imageView1.topAnchor constraintEqualToAnchor:self.scrollView.topAnchor].active = YES;
-  [self.imageView1.bottomAnchor constraintEqualToAnchor:self.scrollView.bottomAnchor].active = YES;
-  [self.imageView1.leadingAnchor constraintEqualToAnchor:self.scrollView.leadingAnchor].active = YES;
+  UIImageView *imageView1 = self.imageViews[0];
+  [imageView1.topAnchor constraintEqualToAnchor:self.scrollView.topAnchor].active = YES;
+  [imageView1.bottomAnchor constraintEqualToAnchor:self.scrollView.bottomAnchor].active = YES;
+  [imageView1.leadingAnchor constraintEqualToAnchor:self.scrollView.leadingAnchor].active = YES;
   
     // imageView1 width and height
   
-  [self.imageView1.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
-  [self.imageView1.heightAnchor constraintEqualToAnchor:self.view.heightAnchor].active = YES;
+  [imageView1.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
+  [imageView1.heightAnchor constraintEqualToAnchor:self.view.heightAnchor].active = YES;
   
     // imageView2
-  [self.imageView2.topAnchor constraintEqualToAnchor:self.scrollView.topAnchor].active = YES;
-  [self.imageView2.bottomAnchor constraintEqualToAnchor:self.scrollView.bottomAnchor].active = YES;
+  UIImageView *imageView2 = self.imageViews[1];
+
+  [imageView2.topAnchor constraintEqualToAnchor:self.scrollView.topAnchor].active = YES;
+  [imageView2.bottomAnchor constraintEqualToAnchor:self.scrollView.bottomAnchor].active = YES;
   
     //****
-  [self.imageView2.leadingAnchor constraintEqualToAnchor:self.imageView1.trailingAnchor].active = YES;
+  [imageView2.leadingAnchor constraintEqualToAnchor:imageView1.trailingAnchor].active = YES;
   
-  [self.imageView2.trailingAnchor constraintEqualToAnchor:self.scrollView.trailingAnchor].active = YES;
+  [imageView2.trailingAnchor constraintEqualToAnchor:self.scrollView.trailingAnchor].active = YES;
   
     // imageView2 height/width
   
-  [self.imageView2.widthAnchor constraintEqualToAnchor:self.imageView1.widthAnchor].active = YES;
-  [self.imageView2.heightAnchor constraintEqualToAnchor:self.imageView1.heightAnchor].active = YES;
+  [imageView2.widthAnchor constraintEqualToAnchor:imageView1.widthAnchor].active = YES;
+  [imageView2.heightAnchor constraintEqualToAnchor:imageView1.heightAnchor].active = YES;
+}
+
+- (void)setupPageControl {
+  UIPageControl *pageControl = [[UIPageControl alloc] init];
+  [self.view addSubview:pageControl];
+  self.pageControl = pageControl;
+  pageControl.layer.zPosition = 100;
+  pageControl.backgroundColor = [UIColor blackColor];
+  pageControl.alpha = 0.5;
+  pageControl.translatesAutoresizingMaskIntoConstraints = NO;
+  [pageControl.heightAnchor constraintEqualToConstant:50.0].active = YES;
+  [pageControl.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+  [pageControl.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+  [pageControl.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+  pageControl.numberOfPages = self.imageViews.count;
+  pageControl.currentPage = 0;
 }
 
 #pragma mark - Delegates
 
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  
-}
-
-
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-  
-}
-
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-  
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-  
-}
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView  {
-  
-}
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
   
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+  CGFloat xOffset = scrollView.contentOffset.x;
+  CGFloat width = self.view.frame.size.width;
+  if (xOffset < width) {
+    self.pageControl.currentPage = 0;
+  } else {
+    NSInteger pageNum = xOffset / self.view.frame.size.width;
+    self.pageControl.currentPage = pageNum;
+  }
   
 }
 
 
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
-  return YES;
-}
-
-- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView  {
-  
-}
 
 
 

@@ -6,7 +6,9 @@
 //  Copyright © 2018 steve. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "AppDelegate.h""
+#import "ScrollViewController.h"
+#import "PageViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  self.window  = [[UIWindow alloc] init];
+  UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+  UIViewController *rootController;
+  
   // Override point for customization after application launch.
+//  if (![NSUserDefaults.standardUserDefaults boolForKey:@"kWasPreviouslyLaunchedKey"]) {
+//    // init PageViewController
+//    // set the defaults
+    rootController = [storyBoard instantiateViewControllerWithIdentifier:@"PageViewController"];
+//    [NSUserDefaults.standardUserDefaults setBool:YES forKey:@"kWasPreviouslyLaunchedKey"];
+////  } else {
+////    // init ScrollViewController
+////    rootController = [storyBoard instantiateViewControllerWithIdentifier:@"ScrollViewController"];
+////  }
+  self.window.rootViewController = rootController;
+  [self.window makeKeyAndVisible];
   return YES;
 }
 
