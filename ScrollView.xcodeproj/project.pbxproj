@@ -16,6 +16,7 @@
 		AA7DDFD92120B12900CC538B /* cats.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA7DDFD82120B12900CC538B /* cats.jpg */; };
 		AA7DDFDC2120BB2100CC538B /* montreal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA7DDFDA2120BB2100CC538B /* montreal.jpg */; };
 		AA7DDFDD2120BB2100CC538B /* chicago.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA7DDFDB2120BB2100CC538B /* chicago.jpg */; };
+		AAF57EBC2121C5EE00E0216B /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF57EBB2121C5EE00E0216B /* PageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		AA7DDFD82120B12900CC538B /* cats.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cats.jpg; sourceTree = "<group>"; };
 		AA7DDFDA2120BB2100CC538B /* montreal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = montreal.jpg; sourceTree = "<group>"; };
 		AA7DDFDB2120BB2100CC538B /* chicago.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chicago.jpg; sourceTree = "<group>"; };
+		AAF57EBA2121C5EE00E0216B /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		AAF57EBB2121C5EE00E0216B /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 			children = (
 				AA7DDFC52120B0FF00CC538B /* ScrollViewController.h */,
 				AA7DDFC62120B0FF00CC538B /* ScrollViewController.m */,
+				AAF57EBA2121C5EE00E0216B /* PageViewController.h */,
+				AAF57EBB2121C5EE00E0216B /* PageViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				AA7DDFC72120B0FF00CC538B /* ScrollViewController.m in Sources */,
 				AA7DDFD22120B10100CC538B /* main.m in Sources */,
 				AA7DDFC42120B0FF00CC538B /* AppDelegate.m in Sources */,
+				AAF57EBC2121C5EE00E0216B /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
